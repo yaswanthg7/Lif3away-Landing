@@ -86,33 +86,9 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="grid grid-cols-2 gap-16 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80" 
-                alt="Modern interior" 
-                className="w-full h-full object-cover shadow-2xl"
-              />
-            </div>
-            <div className="space-y-8 text-black">
-              <h2 className="text-5xl font-light">Innovative features, unlimited power.</h2>
-              <p className="text-gray-400 text-lg">
-                We know how stressful it can be to find a new home to rent and move, especially to a new city.
-                Our goal is to break down all the barriers and risks, at the lowest possible cost, so you can focus only on what matters.
-                That's why we invest in innovation, with the help of technology and AI we can offer never-before-seen features.
-              </p>
-              <div className="flex items-center space-x-3 text-emerald-400">
-                <Building2 className="w-6 h-6" />
-                <span className="text-2xl">New York, USA</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
-      {/* Services Section */}
+      {/* Services Section 
       <section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-24">
           <div className="flex space-x-4 mb-12">
@@ -175,7 +151,7 @@ export default function About() {
           </div>
         </div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 }

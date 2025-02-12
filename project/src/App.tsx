@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Map from './pages/Map';
+import Map from './pages/Investors';
 import Contacts from './pages/Contacts';
 import Login from './pages/Login';
 

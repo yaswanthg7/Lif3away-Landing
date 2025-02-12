@@ -81,14 +81,6 @@ export default function Login() {
                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" className="w-5 h-5 mr-2" />
                 Log in with Google
               </button>
-              <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-700 rounded-md shadow-sm bg-transparent text-sm font-medium text-white hover:bg-gray-900">
-                <img src="https://www.svgrepo.com/show/452156/apple.svg" className="w-5 h-5 mr-2" />
-                Log in with Apple
-              </button>
-              <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-700 rounded-md shadow-sm bg-transparent text-sm font-medium text-white hover:bg-gray-900">
-                <img src="https://www.svgrepo.com/show/452045/microsoft.svg" className="w-5 h-5 mr-2" />
-                Log in with Microsoft
-              </button>
             </div>
           </div>
 

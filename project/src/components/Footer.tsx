@@ -1,3 +1,4 @@
+import{  FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 export default function Footer() {
   return (
     <footer className="bg-black text-white p-6 text-center">
@@ -8,21 +9,18 @@ export default function Footer() {
         </a>
 
         {/* Social Media Icons */}
-        <div className="flex space-x-4">
-          <a href="#" className="text-red-500 text-xl">🔴</a> {/* YouTube */}
-          <a href="#" className="text-blue-500 text-xl">📘</a> {/* Facebook */}
-          <a href="#" className="text-pink-500 text-xl">📷</a> {/* Instagram */}
-          <a href="#" className="text-blue-400 text-xl">🔗</a> {/* LinkedIn */}
-          <a href="#" className="text-gray-400 text-xl">❌</a> {/* X (Twitter) */}
+        <div className="flex space-x-4"> 
+          <a href="https://facebook.com/Lif3away" className="text-blue-500 text-xl"><FaFacebookF /></a> {/* Facebook */}
+          <a href="https://www.linkedin.com/company/lif3away-com/" className="text-blue-400 text-xl"><FaLinkedinIn /></a> {/* LinkedIn */}
         </div>
 
-        {/* Footer Links */}
+        {/* Footer Links 
         <div className="flex flex-wrap justify-center space-x-6 text-sm text-gray-400">
           <a href="#" className="hover:text-white">Press</a>
           <a href="#" className="hover:text-white">Privacy preferences</a>
           <a href="#" className="hover:text-white">Terms & Conditions</a>
           <a href="#" className="hover:text-white">Careers</a>
-        </div>
+        </div>*/}
 
         {/* Address */}
         <p className="text-gray-400 text-sm flex items-center">

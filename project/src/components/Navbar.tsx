@@ -36,7 +36,7 @@ export default function Navbar() {
           to="/map"
           className={`${textColor} ${hoverColor} transition`}
         >
-          MAP
+          
         </Link>
       </div>
 

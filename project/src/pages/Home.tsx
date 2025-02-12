@@ -1,6 +1,6 @@
 import { Building2, CreditCard, Bot, Fingerprint, ChevronLeft, ChevronRight } from 'lucide-react';
 import About from './About';
-import Map from './Map';
+import Map from './Investors';
 import Contacts from './Contacts';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -18,35 +18,48 @@ export default function Home() {
             alt="Modern architecture" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50 flex justify-center items-center" >
-            <h1 className="text-2xl font-light text-white">Simplify your move</h1>
+          <div className="absolute inset-0 flex items-center justify-start pl-12">
+          <h1 className="text-4xl font-light text-[#FEF7FF]">Simplify your move</h1>
           </div>
+
+
+
+
+
+
         </div>
         
         {/* Bottom half - Content and Image */}
         <div className="h-1/2 grid grid-cols-2">
-          {/* Left side - Content */}
-          <div className="bg-black p-12 flex items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-light text-white">Discover the future of rental solutions</h2>
-              <p className="text-lg text-gray-300">
-                Join our exclusive community and be the first to experience a smarter, automated rental platform.
-              </p>
-              <button className="px-8 py-3 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition">
-                Join the waiting list
-              </button>
-            </div>
-          </div>
-          
-          {/* Right side - Image */}
-          <div className="relative overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80" 
-              alt="Modern interior" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+  {/* Left side - Content */}
+  <div className="bg-black p-12 flex items-center">
+    <div className="space-y-6">
+      <h2 className="text-3xl font-light text-[#FEF7FF]">
+        Discover the future of rental solutions
+      </h2>
+      <p className="text-lg text-gray-300">
+        Join our exclusive community and be the first to experience a smarter, 
+        automated rental platform. Connecting you with vetted properties, 
+        trusted landlords, and seamless experiences.
+      </p>
+      <button className="px-8 py-3 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition">
+        Join the waiting list
+      </button>
+    </div>
+  </div>
+
+  {/* Right side - Image */}
+  <div className="relative flex justify-center items-center bg-black p-6">
+    <div className="w-[400px] h-[280px] md:w-[450px] md:h-[320px] overflow-hidden rounded-2xl shadow-lg">
+      <img 
+        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80" 
+        alt="Modern interior" 
+        className="w-full h-full object-cover transform scale-95 rounded-2xl"
+      />
+    </div>
+  </div>
+</div>
+
       </section>
 
       {/* Features Section */}
@@ -62,19 +75,17 @@ export default function Home() {
             </div>
             <div className="space-y-8 text-black">
               <h2 className="text-5xl font-light">Innovative features, unlimited power.</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-gray-400 text-lg-[#1D1B20]">
                 We know how stressful it can be to find a new home to rent and move, especially to a new city.
                 Our goal is to break down all the barriers and risks, at the lowest possible cost, so you can focus only on what matters.
                 That's why we invest in innovation, with the help of technology and AI we can offer never-before-seen features.
               </p>
-              <div className="flex items-center space-x-3 text-emerald-400">
-                <Building2 className="w-6 h-6" />
-                <span className="text-2xl">New York, USA</span>
-              </div>
+              
+              
             </div>
           </div>
         </div>
-      </section>
+      </section> 
 
       {/* Services Section */}
       <section className="bg-gray-50">

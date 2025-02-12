@@ -8,7 +8,7 @@ export default function Map() {
       <div className="relative h-screen">
         {/* Background Image */}
         <img 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+          src="/images/investors.JPG"
           alt="Earth from space" 
           className="w-full h-full object-cover"
         />
@@ -35,7 +35,7 @@ export default function Map() {
       <div className="relative h-screen">
         {/* Background Image */}
         <img 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+          src="/images/investors.JPG"
           alt="Earth from space" 
           className="w-full h-full object-cover"
         />
@@ -62,7 +62,7 @@ export default function Map() {
       <div className="relative h-screen">
         {/* Background Image */}
         <img 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+          src="/images/investors.JPG"
           alt="Earth from space" 
           className="w-full h-full object-cover"
         />
@@ -89,7 +89,7 @@ export default function Map() {
       <div className="relative h-screen">
         {/* Background Image */}
         <img 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+          src="/images/investors.JPG"
           alt="Earth from space" 
           className="w-full h-full object-cover"
         />
