@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 
-export default function Contacts() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     lastName: '',
@@ -30,7 +30,9 @@ export default function Contacts() {
 
       {/* Contact Form */}
       <div className="max-w-2xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-light text-white text-center mb-12">CONTACT US</h1>
+      <h1 className="text-2xl font-light text-[#FEF7FF] text-center mb-12">
+      CONTACT US
+    </h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-2 gap-6">
             <input
@@ -62,16 +64,9 @@ export default function Contacts() {
             value={formData.phone}
             onChange={(e) => setFormData({...formData, phone: e.target.value})}
           />
-          <input
-            type="text"
-            placeholder="Subject"
-            className="w-full bg-transparent border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500"
-            value={formData.subject}
-            onChange={(e) => setFormData({...formData, subject: e.target.value})}
-          />
           <textarea
             placeholder="Your message"
-            rows={6}
+            rows={4}
             className="w-full bg-transparent border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500"
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
