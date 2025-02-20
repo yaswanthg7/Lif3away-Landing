@@ -37,7 +37,7 @@ export default function Contact() {
           <div className="grid grid-cols-2 gap-6">
             <input
               type="text"
-              placeholder="Name"
+              placeholder="First Name"
               className="bg-transparent border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}

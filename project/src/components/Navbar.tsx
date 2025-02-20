@@ -1,42 +1,52 @@
 import { Link } from 'react-router-dom';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { useState } from 'react';
 
 export default function Navbar() {
-  const textColor = 'text-white';
-  const hoverColor = 'hover:text-emerald-400';
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center p-6">
-      {/* Logo and Links in Same Line */}
-      <div className="flex items-center space-x-20">
-        <Link to="/" className="flex items-center space-x-2 text-teal-400">
-          <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-10 h-10" />
-          <span className="text-2xl font-#20D7B8" style={{ fontFamily: "'#20D7B8', Helvetica Neue" }}>
-            Lif3away
-          </span>
-        </Link>
+    <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-6 w-full">
+      {/* Logo */}
+      <Link to="/" className="flex items-center space-x-2">
+        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-10 h-10" />
+        <span className="text-2xl font" style={{ fontFamily: "Helvetica Neue", color: "#20D7B8" }}>
+          Lif3away
+        </span>
+      </Link>
 
-        {/* Centered Links Section */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-40">
-          <Link
-            to="/about"
-            className={`${textColor} ${hoverColor} transition`}
-          >
+      {/* Navigation Links (Centered in the Middle of Screen) */}
+      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-20">
+        <Link to="/about" className="text-lg transition hover:text-emerald-400" style={{ color: "#FEF7FF" }}>
+          ABOUT US
+        </Link>
+        <Link to="/contacts" className="text-lg transition hover:text-emerald-400" style={{ color: "#FEF7FF" }}>
+          CONTACT US
+        </Link>
+        <Link to="/Investors" className="text-lg transition hover:text-emerald-400" style={{ color: "#FEF7FF" }}>
+          INVESTORS
+        </Link>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <button className="md:hidden text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FiX /> : <FiMenu />}
+      </button>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="absolute top-16 left-1 w-full text-center md:hidden flex flex-col space-y-4 p-6">
+          <Link to="/about" className="block text-lg" style={{ color: "#FEF7FF" }}>
             ABOUT US
           </Link>
-          <Link
-            to="/contacts"
-            className={`${textColor} ${hoverColor} transition`}
-          >
+          <Link to="/contacts" className="block text-lg" style={{ color: "#FEF7FF" }}>
             CONTACT US
           </Link>
-          <Link
-            to="/Investors"
-            className={`${textColor} ${hoverColor} transition`}
-          >
-            INVESTOR
+          <Link to="/Investors" className="block text-lg" style={{ color: "#FEF7FF" }}>
+            INVESTORS
           </Link>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
