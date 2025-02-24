@@ -208,7 +208,7 @@ export default function Home() {
           <div className="relative flex justify-center items-center bg-black p-6">
             <div className="w-[400px] h-[280px] md:w-[450px] md:h-[320px] overflow-hidden rounded-2xl shadow-lg">
               <img
-                src="/images/landing-page2.jpg"
+                src="/images/landing-Page2.jpeg"
                 alt="Modern interior"
                 className="w-full h-full object-cover transform scale-95 rounded-2xl"
               />
@@ -319,9 +319,6 @@ export default function Home() {
         </div>
       </section>
 
-      <About />
-      <Map />
-      <Contacts />
       <Footer />
     </div>
   );

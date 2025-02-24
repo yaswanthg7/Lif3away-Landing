@@ -1,5 +1,6 @@
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white p-6 relative">
@@ -7,6 +8,7 @@ export default function Footer() {
         {/* Email */}
         <a
           href="mailto:management@lif3away.com"
+          target="_blank"
           className="text-gray-300 hover:text-white"
         >
           management@lif3away.com
@@ -16,12 +18,14 @@ export default function Footer() {
         <div className="flex space-x-4">
           <a
             href="https://facebook.com/Lif3away"
-            className="text-blue-500 text-xl"
+            target="_blank"
+            className="text-blue-500 text-xl" 
           >
             <FaFacebookF />
           </a>
           <a
             href="https://www.linkedin.com/company/lif3away-com/"
+            target="_blank"
             className="text-blue-400 text-xl"
           >
             <FaLinkedinIn />
@@ -38,9 +42,10 @@ export default function Footer() {
       <div className="absolute bottom-6 left-6 text-sm text-gray-400">
         <a
           href="https://www.linkedin.com/company/lif3away-com/jobs/"
+          target="_blank"
           className="hover:text-white"
         >
-          Lif3away Careers
+        Careers
         </a>
       </div>
 
