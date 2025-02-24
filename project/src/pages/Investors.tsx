@@ -1,30 +1,34 @@
-import { Settings } from 'lucide-react';
-import Navbar from '../components/Navbar';
+import { Settings } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Map() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar/>
+      <Navbar />
       <div className="relative h-screen">
         {/* Background Image */}
-        <img 
+        <img
           src="/images/investors.JPG"
-          alt="Earth from space" 
-          className="w-full h-full object-cover"
+          alt="Earth from space"
+          className="w-full h-full object-cover fixed"
         />
-        
+
         {/* Content Overlay */}
         <div className="absolute inset-0 bg-black/70">
           <div className="max-w-4xl mx-auto px-6 pt-32">
-            <h1 className="text-5xl font-light mb-8">Driving rental evolution</h1>
+            <h1 className="text-5xl font-light mb-8">
+              Driving rental evolution
+            </h1>
             <div className="flex justify-between items-start">
               <div className="max-w-lg">
                 <p className="text-lg mb-4">
-                  Join our exclusive community and be the first to experience a smarter,
-                  automated rental platform.
+                  Join our exclusive community and be the first to experience a
+                  smarter, automated rental platform.
                 </p>
                 <p className="text-lg text-emerald-400">
-                  Connecting you with vetted properties, trusted landlords, and seamless experiences.
+                  Connecting you with vetted properties, trusted landlords, and
+                  seamless experiences.
                 </p>
               </div>
               <Settings className="w-32 h-32 text-white" />
@@ -34,12 +38,12 @@ export default function Map() {
       </div>
       <div className="relative h-screen">
         {/* Background Image */}
-        <img 
+        <img
           src="/images/investors.JPG"
-          alt="Earth from space" 
-          className="w-full h-full object-cover"
+          alt="Earth from space"
+          className="w-full h-full object-cover fixed"
         />
-        
+
         {/* Content Overlay */}
         <div className="absolute inset-0 bg-black/70">
           <div className="max-w-4xl mx-auto px-6 pt-32">
@@ -47,11 +51,12 @@ export default function Map() {
             <div className="flex justify-between items-start">
               <div className="max-w-lg">
                 <p className="text-lg mb-4">
-                  Join our exclusive community and be the first to experience a smarter,
-                  automated rental platform.
+                  Join our exclusive community and be the first to experience a
+                  smarter, automated rental platform.
                 </p>
                 <p className="text-lg text-emerald-400">
-                  Connecting you with vetted properties, trusted landlords, and seamless experiences.
+                  Connecting you with vetted properties, trusted landlords, and
+                  seamless experiences.
                 </p>
               </div>
               <Settings className="w-32 h-32 text-white" />
@@ -61,13 +66,12 @@ export default function Map() {
       </div>
       <div className="relative h-screen">
         {/* Background Image */}
-        <img 
+        <img
           src="/images/investors.JPG"
-          alt="Earth from space" 
-          className="w-full h-full object-cover"
+          alt="Earth from space"
+          className="w-full h-full object-cover fixed"
         />
-  
-        
+
         {/* Content Overlay */}
         <div className="absolute inset-0 bg-black/70">
           <div className="max-w-4xl mx-auto px-6 pt-32">
@@ -75,11 +79,12 @@ export default function Map() {
             <div className="flex justify-between items-start">
               <div className="max-w-lg">
                 <p className="text-lg mb-4">
-                  Join our exclusive community and be the first to experience a smarter,
-                  automated rental platform.
+                  Join our exclusive community and be the first to experience a
+                  smarter, automated rental platform.
                 </p>
                 <p className="text-lg text-emerald-400">
-                  Connecting you with vetted properties, trusted landlords, and seamless experiences.
+                  Connecting you with vetted properties, trusted landlords, and
+                  seamless experiences.
                 </p>
               </div>
               <Settings className="w-32 h-32 text-white" />
@@ -87,6 +92,7 @@ export default function Map() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
