@@ -9,28 +9,28 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-6 w-full">
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
-        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-10" />
+        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-10 h-10" />
         <span
-          className="text-2xl font"
-          style={{ fontFamily: "Helvetica Neue", color: "#20D7B8" }}
+          className="text-lg font- thin"
+          style={{ fontFamily: "Arial", color: "#20D7B8",fontWeight: 200 }}
         >
           Lif3away
         </span>
       </Link>
 
       {/* Navigation Links (Centered in the Middle of Screen) */}
-      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-20">
+      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-20 ">
         <Link
           to="/about"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF" }}
+          style={{ color: "#FEF7FF" , marginRight:"8rem"}}
         >
           ABOUT US
         </Link>
         <Link
           to="/contacts"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF" }}
+          style={{ color: "#FEF7FF",marginRight:"8rem" }}
         >
           CONTACT US
         </Link>

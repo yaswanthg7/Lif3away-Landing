@@ -6,9 +6,6 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import About from "./About-us";
-import Map from "./Investors";
-import Contacts from "./Contact-us";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
@@ -48,7 +45,7 @@ const tabData = {
       title: "Veritrust",
       icon: <Fingerprint className="w-6 h-6 text-emerald-600" />,
       description:
-        "The Veritrust means the landlord or agent has earned at least 10 reviews with 4 stars or higher, ensuring reliability and trustworthiness, Unlike other platforms, Lif3away sets the bar for transparency, so you can feel secure in your rental decisions.",
+        "Veritrust means the landlord or professional has earned at least 10 reviews with 4 stars or higher, ensuring reliability and trustworthiness. Unlike other platforms, Lif3away sets the bar for transparency, so you can feel secure in your rental decisions.",
     },
     {
       title: "Online Contract",
@@ -176,36 +173,37 @@ export default function Home() {
           <img
             src="/images/landing-page.JPG"
             alt="Modern architecture"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover "
+            style={{
+              objectPosition: "110% 38%",
+            }}
           />
           <div className="absolute inset-0 flex items-center justify-start pl-[5%]">
-            <h1 className="text-4xl font-light text-[#FEF7FF]">
+            <h1 className="text-3xl font-light text-[#FEF7FF] absolute top-1/4 left-1/4 right-2/4 transform -translate-x-2/4 mt-12 ">
               Simplify your move
             </h1>
           </div>
         </div>
 
         {/* Bottom Content */}
-        <div className="h-1/2 grid grid-cols-2">
+        <div className="min-h-[50vh] grid grid-cols-2">
           {/* Left Content */}
-          <div className="bg-black p-12 flex items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-light text-[#FEF7FF]">
-                Discover the future of rental solutions
-              </h2>
-              <p className="text-lg text-gray-300">
-                Join our exclusive community and be the first to experience a
-                smarter, automated rental platform. Connecting you with vetted
-                properties, trusted landlords, and seamless experiences.
-              </p>
-              <button className="px-8 py-3 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition">
-                Join the waiting list
-              </button>
-            </div>
+          <div className="bg-[#1D1B20] p-12 flex flex-col items-center justify-center">
+         <div className="space-y-6 text-center">
+          <h2 className="text-3xl font-light text-[#FEF7FF]">
+          Discover the future of rental solutions
+          </h2>
+          <p className="text-lg text-[#FEF7FF]">
+          Join our exclusive community and be the first to experience a smarter, automated rental platform. Connecting you with vetted properties, trusted landlords, and seamless experiences.
+          </p>
+          <button className="px-8 py-3 bg-[#1D1B20] text-[#FEF7FF] border border-[#FEF7FF] rounded-full hover:bg-[#1D1B20] transition">
+             Join the waiting list
+          </button>
+          </div>
           </div>
 
           {/* Right Image */}
-          <div className="relative flex justify-center items-center bg-black p-6">
+          <div className="relative flex justify-center items-center bg-[#1D1B20] p-6">
             <div className="w-[400px] h-[280px] md:w-[450px] md:h-[320px] overflow-hidden rounded-2xl shadow-lg">
               <img
                 src="/images/landing-Page2.jpeg"
