@@ -23,7 +23,7 @@ export default function About() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSection((prev) => (prev + 1) % sections.length);
-    }, 7000); // Slower transition every 7 seconds
+    }, 7000); 
     return () => clearInterval(interval);
   }, []);
 
