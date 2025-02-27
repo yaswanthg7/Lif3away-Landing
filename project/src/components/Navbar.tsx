@@ -23,14 +23,14 @@ export default function Navbar() {
         <Link
           to="/about"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF" , marginRight:"10rem" , fontSize:"1rem", fontWeight: 200 }}
+          style={{ color: "#FEF7FF" , marginRight:"9rem" , fontSize:"1rem" }}
         >
           ABOUT US
         </Link>
         <Link
           to="/contacts"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF",marginRight:"10rem" ,fontSize:"1rem"}}
+          style={{ color: "#FEF7FF",marginRight:"9rem" ,fontSize:"1rem"}}
         >
           CONTACT US
         </Link>
