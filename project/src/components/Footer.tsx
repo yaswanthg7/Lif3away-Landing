@@ -3,7 +3,7 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white p-6 relative">
+    <footer className="bg-[#1D1B20] text-white p-6 relative">
       <div className="container mx-auto flex flex-col items-center space-y-4 text-center">
         {/* Email */}
         <a

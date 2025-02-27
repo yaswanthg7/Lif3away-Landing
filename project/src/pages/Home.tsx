@@ -226,11 +226,11 @@ export default function Home() {
                 className="w-full h-full object-cover shadow-2xl"
               />
             </div>
-            <div className="space-y-8 text-black">
+            <div className="space-y-8 text-blackn text-center">
               <h2 className="text-5xl font-light">
                 Innovative features, unlimited power.
               </h2>
-              <p className="text-gray-400 text-lg-[#1D1B20]">
+              <p className="text-black-400 text-lg-[#1D1B20]">
                 We know how stressful it can be to find a new home to rent and
                 move, especially to a new city. Our goal is to break down all
                 the barriers and risks, at the lowest possible cost, so you can
