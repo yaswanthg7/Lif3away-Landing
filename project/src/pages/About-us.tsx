@@ -23,7 +23,7 @@ export default function About() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSection((prev) => (prev + 1) % sections.length);
-    }, 5000);
+    }, 7000); // Slower transition every 7 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -32,42 +32,39 @@ export default function About() {
       <Navbar />
       <section className="h-screen">
         <div className="flex flex-col h-full">
-          {/* Top half - Image */}
+          {/* Top Half - Background Image with Heading */}
           <div className="h-1/2 relative">
             <img
               src="/images/about-us.jpg"
               alt="Modern living space"
               className="w-full h-full object-cover"
+              style={{ objectPosition: "50% 44%" }}
             />
             {/* Centered Heading */}
             <div className="absolute inset-0 flex justify-center items-center">
-              <h1 className="text-2xl font-light text-[#FEF7FF]">
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.85, ease: "easeOut" }}
-                >
-                  Be part of the change you are looking for
-                </motion.div>
-              </h1>
+              <motion.h1
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }} // Slower appearance
+                className="text-2xl font-light text-[#FEF7FF] text-center px-4 mr-40 mb-40"
+              >
+                Be part of the change you are looking for
+              </motion.h1>
             </div>
           </div>
 
-          {/* Bottom half - Content */}
-          <div className="h-1/2 bg-[#1D1B20] text-[#FEF7FF] flex items-center">
+          {/* Bottom Half - Auto-Transitioning Content */}
+          <div className="h-[50vh] bg-[#1D1B20] text-[#FEF7FF] flex items-center">
             <div className="max-w-4xl mx-auto px-6">
               <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
+                key={currentSection} // Key ensures re-animation on change
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 2, ease: "easeInOut" }} // **Slower transition (2s)**
               >
-                <h2 className="text-4xl font-light mb-8 text-left">
-                  {sections[currentSection].title}
-                </h2>
-                <p className="text-lg leading-relaxed">
-                  {sections[currentSection].text}
-                </p>
+                <h2 className="text-4xl font-light mb-6">{sections[currentSection].title}</h2>
+                <p className="text-lg leading-relaxed">{sections[currentSection].text}</p>
               </motion.div>
             </div>
           </div>

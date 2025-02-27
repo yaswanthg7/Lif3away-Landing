@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-6 w-full">
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
-        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-8 h-8" />
+        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-9 h-10" />
         <span
           className="text-lg font- thin"
           style={{ fontFamily: "Arial", color: "#20D7B8",fontWeight: 200 , fontSize: "1rem" }}
