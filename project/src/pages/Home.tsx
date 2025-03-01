@@ -1,8 +1,6 @@
 import { useState } from "react";
 import {
-  CreditCard,
-  Bot,
-  Fingerprint,
+  
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -13,145 +11,145 @@ const tabData = {
   Tenants: [
     {
       title: "Save Money",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/save-money.png",
       description:
         "You get a secure and efficient rental experience that’s as budget-friendly as it is hassle-free. Discover a smarter way to book and start saving today.",
     },
     {
       title: "Online Booking",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/online-booking.png",
       description:
         "Book your next rental easily with Lif3away’s secure online reservation. With a protected payment process, you can reserve properties quickly.",
     },
     {
       title: "ID Check Advanced",
-      icon: <Fingerprint className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/id-check.png",
       description:
         "Our service verifies landlords and agents, significantly reducing the risk of fraud, Especially beneficial for international tenants or those unfamiliar with the area, ensuring you can trust the people you’re dealing with.",
     },
     {
       title: "AI Personal Agent",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/ai-agent.png",
       description:
-        "Let Lif3away’s AI Personal Agent do the heavy lifting for you. Increase your chances of securing the perfect place with tailored recommendations and smart insights, Your personal rental assistant, always by your side.",
+        "Let Lif3away’s AI Personal Agent do the heavy lifting for you. Increase your chances of securing the perfect place with tailored recommendations and smart insights.",
     },
     {
       title: "Live View",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/live-view.png",
       description:
-        "Whether you're in a different city or country, you can thoroughly assess a property before committing to a lease, saving you time and travel expenses while ensuring you get a clear, detailed view of your next home.",
+        "Whether you're in a different city or country, you can thoroughly assess a property before committing to a lease, saving you time and travel expenses.",
     },
     {
       title: "Veritrust",
-      icon: <Fingerprint className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/veritrust.png",
       description:
-        "Veritrust means the landlord or professional has earned at least 10 reviews with 4 stars or higher, ensuring reliability and trustworthiness. Unlike other platforms, Lif3away sets the bar for transparency, so you can feel secure in your rental decisions.",
+        "Veritrust means the landlord or professional has earned at least 10 reviews with 4 stars or higher, ensuring reliability and trustworthiness.",
     },
     {
       title: "Online Contract",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/online-contract.png",
       description:
-        "Easily share and digitally sign rental agreements, ensuring speed, transparency, and reliability for both parties, Perfect for those relocating to another country, it simplifies the process and builds trust every step of the way.",
+        "Easily share and digitally sign rental agreements, ensuring speed, transparency, and reliability for both parties.",
     },
   ],
   Landlords: [
     {
       title: "Save Money",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/save-money.png",
       description:
-        "You Can Access the most affordable and transparent online booking system. No hidden fees, no complicated pricing. Save money, save time, and experience the difference with Lif3away.",
+        "Access the most affordable and transparent online booking system. No hidden fees, no complicated pricing.",
     },
     {
       title: "Online Booking",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/online-booking.png",
       description:
-        "Lif3away allows landlords to accept reservations effortlessly through a protected payment process, ensuring quick and reliable transactions. Manage your rentals with confidence and ease, no matter where your tenants are coming from.",
+        "Lif3away allows landlords to accept reservations effortlessly through a protected payment process.",
     },
     {
       title: "ID Check Advanced",
-      icon: <Fingerprint className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/id-check.png",
       description:
-        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud. This simple yet powerful process safeguards your property and streamlines tenant screening, making it faster and more reliable than ever before.",
+        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud.",
     },
     {
       title: "AI Personal Agent",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/ai-agent.png",
       description:
-        "Set competitive prices, optimize occupancy, and automatically create polished property descriptions. Get real-time market insights and task automation to save time and reduce errors, keeping your listings attractive and reducing vacancy periods.",
+        "Set competitive prices, optimize occupancy, and create polished property descriptions using AI.",
     },
     {
       title: "Live View",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/live-view.png",
       description:
-        "Showcase your property efficiently with virtual tours, allowing potential tenants to explore without multiple in-person visits. Ideal for landlords with multiple listings or properties in different locations, it lets you conduct tours remotely, saving time and reaching more interested renters.",
+        "Showcase your property efficiently with virtual tours, allowing potential tenants to explore remotely.",
     },
     {
       title: "Veritrust",
-      icon: <Fingerprint className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/veritrust.png",
       description:
-        "This added layer of security helps reduce risks and gives you peace of mind, knowing your tenants have passed both identity and financial checks. Trust veritrust to make your rental experience safer, more reliable, and hassle-free.",
+        "This added layer of security helps reduce risks and gives you peace of mind.",
     },
     {
       title: "Online Contract",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/online-contract.png",
       description:
-        " Landlords can easily create, send, and manage rental contracts online, streamlining the leasing process. Automate paperwork, save time, and reduce errors, all within the platform, making property management more efficient and hassle-free.",
+        "Easily create, send, and manage rental contracts online, streamlining the leasing process.",
     },
     {
       title: "Sponsored Ads",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/sponsored-ads.png",
       description:
-        "Accelerate your rental process and increase your property's visibility across continents. Reach a wider audience, improve attractiveness, and attract more potential tenants faster, all while enhancing the global appeal of your listings.",
+        "Increase your property’s visibility and attract more potential tenants with targeted advertisements.",
     },
   ],
   Agents: [
     {
       title: "Save Money",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/save-money.png",
       description:
-        "You can access the most affordable and transparent online booking system available. No hidden fees, no complicated pricing. Save money, save time, and experience the difference with Lif3away.",
+        "Access the most affordable and transparent online booking system available. No hidden fees, no complicated pricing.",
     },
     {
       title: "Online Booking",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/online-booking.png",
       description:
-        "Lif3away allows landlords to accept reservations effortlessly through a protected payment process, ensuring quick and reliable transactions.",
+        "Lif3away allows landlords to accept reservations effortlessly through a protected payment process.",
     },
     {
       title: "ID Check Advanced",
-      icon: <Fingerprint className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/id-check.png",
       description:
-        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud. This simple yet powerful process not only safeguards your property but also streamlines tenant screening, making it faster and more reliable than ever before.",
+        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud.",
     },
     {
       title: "AI Personal Agent",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/ai-agent.png",
       description:
-        "Lif3away’s AI instantly generates property descriptions, saving time and ensuring consistency. With real-time market data, agents can optimize pricing and occupancy, quickly adapting to trends. Stay competitive and attract renters faster, all while boosting efficiency and revenue.",
+        "Lif3away’s AI instantly generates property descriptions, saving time and ensuring consistency.",
     },
     {
       title: "Live View",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/live-view.png",
       description:
-        "Lif3away’s live view feature lets agents showcase properties to interested tenants without in-person viewing. Ideal for agents with multiple listings or properties in different locations, it offers a time-saving solution for remote showings. Conduct tours effortlessly, attract more tenants, and manage properties more efficiently.",
+        "Lif3away’s live view feature lets agents showcase properties remotely, attracting more tenants.",
     },
     {
       title: "Veritrust",
-      icon: <Fingerprint className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/veritrust.png",
       description:
-        "This added layer of security helps reduce risks and gives you peace of mind, knowing your tenants have passed both identity and financial checks. Trust Veritrust to make your rental experience safer, more reliable, and hassle-free.",
+        "This added layer of security helps reduce risks and gives you peace of mind.",
     },
     {
       title: "Online Contract",
-      icon: <CreditCard className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/online-contract.png",
       description:
-        " Lif3away enables agents to generate, distribute, and track contracts seamlessly for both tenants and landlords. By centralizing all paperwork within the platform, agents save time, reduce errors, and keep everything organized in one place.",
+        "Lif3away enables agents to generate, distribute, and track contracts seamlessly for both tenants and landlords.",
     },
     {
       title: "Sponsored Ads",
-      icon: <Bot className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/sponsored-ads.png",
       description:
-        "Accelerate your rental process and expand your properties’ visibility across continentswith Lif3away. Attract a wider audience, increase your property’s appeal, and secure more potential tenants faster. Enhance the global appeal of your listings, making them more attractive to renters from around the world",
+        "Increase your property’s visibility and attract more potential tenants with targeted advertisements.",
     },
   ],
 };
@@ -281,8 +279,8 @@ export default function Home() {
                       : "hover:ring-1 hover:ring-gray-300"
                   }`}
                 >
-                  <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
-                    {tab.icon}
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                  <img src={tab.icon} alt={tab.title} className="w-full h-full object-contain" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">{tab.title}</h3>
                   <p className="text-gray-600">{tab.description}</p>

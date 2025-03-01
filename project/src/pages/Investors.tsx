@@ -7,32 +7,32 @@ const content = [
   {
     title: "Driving rental evolution",
     text: "Join our exclusive community and be the first to experience a smarter, automated rental platform. Connecting you with vetted properties, trusted landlords, and seamless experiences.",
-    image: "/images/logo1.jpg", 
+    image: "/images/Logo1.png", 
   },
   {
     title: "Our mission",
     text: "With today's technology, the platform can fill this gap by offering a complete and intuitive solution for medium and long-term rentals, ensuring easy access to quality housing solutions across borders, specifically designed for people moving internationally.",
-    image: "/images/logo2.jpg", 
+    image: "/images/Logo2.png", 
   },
   {
     title: "Specialized market focus",
     text: "We cater specifically to medium and long-term renters, ensuring tailored solutions for their needs.",
-    image: "/images/logo3.jpg", 
+    image: "/images/Logo3.png", 
   },
   {
     title: "Flexible booking options",
     text: "Our platform offers adaptable leasing terms to match your lifestyle and plans.",
-    image: "/images/logo4.jpg", 
+    image: "/images/Logo4.png", 
   },
   {
     title: "Technology-driven safeguards",
     text: "We integrate cutting-edge security measures to protect tenants and landlords.",
-    image: "/images/logo5.jpg", 
+    image: "/images/Logo5.png", 
   },
   {
     title: "Effortless online solutions",
     text: "A seamless digital experience from property search to lease finalization.",
-    image: "/images/logo6.jpg", 
+    image: "/images/Logo6.png", 
   },
 ];
 
@@ -86,12 +86,12 @@ export default function Map() {
 
         {/* Image Displayed Next to Content */}
         <div 
-          className=" ml-auto flex justify-center items-center h-40 w-40 " // Adjusted to make sure the image isn't too large
+          className=" ml-auto flex justify-center items-center h-60 w-40 mr-20" // Adjusted to make sure the image isn't too large
         >
           <img
             src={content[index].image} // Dynamically changes image based on the index
             alt={`Image ${index + 1}`}
-            className="h-full w-full object-cover rounded-lg" // Adjusted to keep image proportions
+            className="h-full w-full object-cover rounded-lg " // Adjusted to keep image proportions
             style={{
               filter: 'brightness(0.6)', // Applying brightness to darken the image and blend it better
             }}
