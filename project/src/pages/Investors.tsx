@@ -62,41 +62,46 @@ export default function Map() {
       
       {/* Bottom Half: Content Section */}
       <div 
-        className="relative h-[50vh] flex flex-row justify-start items-center px-6" // flex-row to align side by side
+        className="relative h-[50vh] flex flex-row justify-start items-center px-6"
         style={{
           background: "linear-gradient(to bottom, #000000, #1D1B20)",
         }}
       >
         {/* Content Section */}
-        <div className="max-w-4xl text-left pl-10 flex-1">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 1 }}
-            >
-              {/* Title and Text Content */}
-              <h1 className="text-4xl font-light mb-4">{content[index].title}</h1>
-              <p className="text-lg text-[#FEF7FF] max-w-xl">{content[index].text}</p>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1 }}
+            className="max-w-4xl text-left pl-10 flex-1"
+          >
+            <h1 className="text-4xl font-light mb-4">{content[index].title}</h1>
+            <p className="text-lg text-[#FEF7FF] max-w-xl">{content[index].text}</p>
+          </motion.div>
+        </AnimatePresence>
 
-        {/* Image Displayed Next to Content */}
-        <div 
-          className=" ml-auto flex justify-center items-center h-60 w-40 mr-20" // Adjusted to make sure the image isn't too large
-        >
-          <img
-            src={content[index].image} // Dynamically changes image based on the index
-            alt={`Image ${index + 1}`}
-            className="h-full w-full object-cover rounded-lg " // Adjusted to keep image proportions
-            style={{
-              filter: 'brightness(0.6)', // Applying brightness to darken the image and blend it better
-            }}
-          />
-        </div>
+        {/* Image Displayed Next to Content (Fully Synced Transition) */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1 }} 
+            className="ml-auto flex justify-center items-center h-60 w-40 mr-20"
+          >
+            <img
+              src={content[index].image} 
+              alt={`Image ${index + 1}`}
+              className="h-full w-full object-cover rounded-lg"
+              style={{
+                filter: "brightness(0.6)", 
+              }}
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <Footer />
