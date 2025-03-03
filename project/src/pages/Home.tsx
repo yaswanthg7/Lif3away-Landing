@@ -279,8 +279,8 @@ export default function Home() {
                       : "hover:ring-1 hover:ring-gray-300"
                   }`}
                 >
-                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-6">
-                  <img src={tab.icon} alt={tab.title} className="w-full h-full object-contain" />
+                  <div className="w-12 h-12 bg-white-100 rounded-full flex items-center justify-center mb-6 ">
+                   <img src={tab.icon} alt={tab.title} className="w-full h-full object-contain" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">{tab.title}</h3>
                   <p className="text-gray-600">{tab.description}</p>

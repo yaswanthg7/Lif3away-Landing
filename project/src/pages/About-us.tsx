@@ -33,11 +33,11 @@ export default function About() {
       <section className="h-screen">
         <div className="flex flex-col h-full">
           {/* Top Half - Background Image with Heading */}
-          <div className="h-1/2 relative">
+          <div className="h-[60vh] relative">
             <img
               src="/images/about-us.jpg"
               alt="Modern living space"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover mr-80"
               style={{ objectPosition: "50% 44%" }}
             />
             {/* Centered Heading */}
@@ -46,7 +46,7 @@ export default function About() {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }} // Slower appearance
-                className="text-2xl font-light text-[#FEF7FF] text-center px-4 mr-40 mb-40"
+                className="text-2xl font-400 text-[#FEF7FF] text-center px-4 mr-100 ml-50 mb-60 mt-90"
               >
                 Be part of the change you are looking for
               </motion.h1>
@@ -54,7 +54,7 @@ export default function About() {
           </div>
 
           {/* Bottom Half - Auto-Transitioning Content */}
-          <div className="h-[50vh] bg-[#1D1B20] text-[#FEF7FF] flex items-center">
+          <div className="h-[40vh] bg-[#1D1B20] text-[#FEF7FF] flex items-center">
             <div className="max-w-4xl mx-auto px-6">
               <motion.div
                 key={currentSection} // Key ensures re-animation on change
