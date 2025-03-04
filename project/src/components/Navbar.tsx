@@ -9,10 +9,15 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-6 w-full">
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2 ">
-        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-9 h-10 "  />
+        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-9 h-10 " />
         <span
           className="text-lg font- thin "
-          style={{ fontFamily: "Arial", color: "#20D7B8",fontWeight: 200 , fontSize: "1rem" }}
+          style={{
+            fontFamily: "Arial",
+            color: "#20D7B8",
+            fontWeight: 200,
+            fontSize: "1rem",
+          }}
         >
           Lif3away
         </span>
@@ -23,21 +28,21 @@ export default function Navbar() {
         <Link
           to="/about"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF" , marginRight:"9rem" , fontSize:"1rem" }}
+          style={{ color: "#FEF7FF", marginRight: "6rem", fontSize: "1rem" }}
         >
           ABOUT US
         </Link>
         <Link
           to="/contacts"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF",marginRight:"9rem" ,fontSize:"1rem"}}
+          style={{ color: "#FEF7FF", marginRight: "9rem", fontSize: "1rem" }}
         >
           CONTACT US
         </Link>
         <Link
           to="/Investors"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF",fontSize:"1rem" }}
+          style={{ color: "#FEF7FF", fontSize: "1rem" }}
         >
           INVESTORS
         </Link>
