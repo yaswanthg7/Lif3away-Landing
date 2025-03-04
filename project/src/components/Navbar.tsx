@@ -35,7 +35,7 @@ export default function Navbar() {
         <Link
           to="/contacts"
           className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF", marginRight: "9rem", fontSize: "1rem" }}
+          style={{ color: "#FEF7FF", marginRight: "6rem", fontSize: "1rem" }}
         >
           CONTACT US
         </Link>
