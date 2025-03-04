@@ -36,8 +36,7 @@ export default function Footer() {
         {/* Bottom Section: Everything in One Straight Line and Centered */}
         <div className="flex justify-center items-center text-sm text-white-400 space-x-4">
           {/* Lif3away Logo */}
-          <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-6 h-6" />
-          <p> Lif3away Inc © 2025. All Rights Reserved</p> <span>|</span>
+          <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-5 h-6" /><p> Lif3away Inc © 2025. All Rights Reserved</p> <span>|</span>
           <a href="mailto:management@lif3away.com" className="hover:text-white">
             management@lif3away.com
           </a> 
