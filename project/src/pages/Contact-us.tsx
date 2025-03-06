@@ -70,9 +70,10 @@ export default function Contact() {
         </h1>
 
         {successMessage && (
-          <div className="bg-green-500 text-white p-2 rounded-md text-center mb-4">
-            {successMessage}
-          </div>
+         <div className="w-full border border-gray-700 text-white py-2 rounded-full text-center">
+         {successMessage}
+        </div>
+       
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
