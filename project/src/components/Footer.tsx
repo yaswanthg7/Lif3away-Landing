@@ -1,4 +1,4 @@
-import { FaInstagram, FaYoutube, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaInstagram, FaYoutube, FaLinkedinIn, FaXTwitter, FaFacebook } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -30,6 +30,9 @@ export default function Footer() {
             <a href="https://www.linkedin.com/company/lif3away-com/" target="_blank" className="text-white-400 hover:text-white text-xl">
               <FaLinkedinIn />
             </a>
+            <a href="https://www.facebook.com/Lif3away" target="_blank" className="text-white-400 hover:text-white text-xl">
+              <FaFacebook />
+            </a>
           </div>
         </div>
 
@@ -37,11 +40,10 @@ export default function Footer() {
         <div className="flex justify-center items-center text-sm text-white-400 space-x-4">
           {/* Lif3away Logo */}
           <div className="flex items-center space-x-2">
-          <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-6 h-6" />
-          <p> Lif3away Inc © 2025. All Rights Reserved</p>
+          <p> © 2025 Lif3away Inc. All Rights Reserved.</p>
            </div>
           <span>|</span>
-          <a href="mailto:management@lif3away.com" className="hover:text-white">
+          <a href="mailto:management@lif3away.com" target="_blank" className="hover:text-white">
             management@lif3away.com
           </a> 
           <span>|</span>

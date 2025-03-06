@@ -123,7 +123,7 @@ export default function Contact() {
           />
           <button
             type="submit"
-            className="w-full border border-gray-700 text-white py-2 rounded-md hover:bg-emerald-600 transition"
+            className="w-full border border-gray-700 text-white py-2 rounded-full hover:bg-white hover:text-gray-600 transition"
             disabled={loading}
           >
             {loading ? "Sending..." : "Send Message"}
