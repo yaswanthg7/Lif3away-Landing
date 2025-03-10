@@ -6,12 +6,12 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-6 w-full">
+    <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 w-full bg-[#1D1B20] md:bg-transparent">
       {/* Logo */}
-      <Link to="/" className="flex items-center space-x-2 ">
-        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-9 h-10 " />
+      <Link to="/" className="flex items-center space-x-2">
+        <img src="/images/logo.PNG" alt="Lif3away Logo" className="w-9 h-10 rounded-full" />
         <span
-          className="text-lg font- thin "
+          className="text-lg font-thin"
           style={{
             fontFamily: "Arial",
             color: "#20D7B8",
@@ -23,30 +23,23 @@ export default function Navbar() {
         </span>
       </Link>
 
-      {/* Navigation Links (Centered in the Middle of Screen) */}
-      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-20  ">
-        <Link
-          to="/about"
-          className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF", marginRight: "6rem", fontSize: "1rem" }}
-        >
-          ABOUT US
-        </Link>
-        <Link
-          to="/contacts"
-          className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF", marginRight: "6rem", fontSize: "1rem" }}
-        >
-          CONTACT US
-        </Link>
-        <Link
-          to="/Investors"
-          className="text-lg transition hover:text-emerald-400"
-          style={{ color: "#FEF7FF", fontSize: "1rem" }}
-        >
-          INVESTORS
-        </Link>
-      </div>
+      
+{/* Desktop Navigation */}
+<div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 max-w-[45vw] w-full justify-between px-4">
+  <Link to="/about" className="text-sm md:text-base hover:text-emerald-400 transition text-[#FEF7FF] whitespace-nowrap">
+    ABOUT US
+  </Link>
+  <Link to="/contacts" className="text-sm md:text-base hover:text-emerald-400 transition text-[#FEF7FF] whitespace-nowrap">
+    CONTACT US
+  </Link>
+  <Link to="/Investors" className="text-sm md:text-base hover:text-emerald-400 transition text-[#FEF7FF] whitespace-nowrap">
+    INVESTORS
+  </Link>
+</div>
+
+
+
+
 
       {/* Mobile Menu Button */}
       <button
@@ -57,31 +50,15 @@ export default function Navbar() {
       </button>
 
       {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <div className="absolute top-16 left-1 w-full text-center md:hidden flex flex-col space-y-4 p-6">
-          <Link
-            to="/about"
-            className="block text-lg"
-            style={{ color: "#FEF7FF" }}
-          >
-            ABOUT US
-          </Link>
-          <Link
-            to="/contacts"
-            className="block text-lg"
-            style={{ color: "#FEF7FF" }}
-          >
-            CONTACT US
-          </Link>
-          <Link
-            to="/Investors"
-            className="block text-lg"
-            style={{ color: "#FEF7FF" }}
-          >
-            INVESTORS
-          </Link>
-        </div>
-      )}
+      <div
+        className={`absolute top-16 left-0 w-full bg-[#1D1B20] text-white text-center transform transition-all duration-300 ${
+          menuOpen ? "h-auto opacity-100 py-6" : "h-0 opacity-0 overflow-hidden"
+        } md:hidden`}
+      >
+        <Link to="/about" className="block py-2 text-lg hover:text-emerald-400 transition">ABOUT US</Link>
+        <Link to="/contacts" className="block py-2 text-lg hover:text-emerald-400 transition">CONTACT US</Link>
+        <Link to="/Investors" className="block py-2 text-lg hover:text-emerald-400 transition">INVESTORS</Link>
+      </div>
     </nav>
   );
 }

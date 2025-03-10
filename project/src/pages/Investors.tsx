@@ -55,14 +55,14 @@ export default function Map() {
         <img
           src="/images/investors.JPG"
           alt="Earth from space"
-          className="w-full h-full object-cover absolute "
+          className="w-full h-full object-cover absolute"
           style={{ objectPosition: "50% 30%" }}
         />
       </div>
       
       {/* Bottom Half: Content Section */}
       <div 
-        className="relative h-[50vh] flex flex-row justify-start items-center px-6"
+        className="relative h-auto min-h-[50vh] flex flex-col md:flex-row justify-start items-center px-6 py-10 md:py-0"
         style={{
           background: "linear-gradient(to bottom, #000000, #1D1B20)",
         }}
@@ -75,33 +75,41 @@ export default function Map() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1 }}
-            className="max-w-4xl text-left pl-10 flex-1"
+            className="max-w-4xl text-center md:text-left md:pl-10 flex-1"
           >
-            <h1 className="text-4xl font-light mb-4">{content[index].title}</h1>
-            <p className="text-lg text-[#FEF7FF] max-w-xl">{content[index].text}</p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4">
+              {content[index].title}
+            </h1>
+            <p className="text-base sm:text-lg text-[#FEF7FF] max-w-xl mx-auto md:mx-0">
+              {content[index].text}
+            </p>
           </motion.div>
         </AnimatePresence>
 
-        {/* Image Displayed Next to Content (Fully Synced Transition) */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 1 }} 
-            className="ml-auto flex justify-center items-center h-60 w-40 mr-20"
-          >
-            <img
-              src={content[index].image} 
-              alt={`Image ${index + 1}`}
-              className="h-full w-full object-cover rounded-lg"
-              style={{
-                filter: "brightness(0.6)", 
-              }}
-            />
-          </motion.div>
-        </AnimatePresence>
+        {/* Image Section */}
+{/* Image Displayed Next to Content (Fully Synced Transition) */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 1 }} 
+          className="ml-auto flex justify-center items-center 
+                    h-60 w-40 mr-20 
+                    sm:mr-0 sm:h-42 sm:w-42 sm:mt-6"  //  Adjusted for Mobile View
+        >
+          <img
+            src={content[index].image} 
+            alt={`Image ${index + 1}`}
+            className="h-full w-full object-contain rounded-lg" 
+            style={{
+              filter: "brightness(0.9)", 
+            }}
+          />
+        </motion.div>
+      </AnimatePresence>
+
       </div>
 
       <Footer />

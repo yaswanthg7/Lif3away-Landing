@@ -1,55 +1,51 @@
 import { useState } from "react";
-import {
-  
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-
+import Footer from "../components/Footer";
+import "../index.css"
+import { useEffect } from "react";
 const tabData = {
   Tenants: [
     {
       title: "Save Money",
       icon: "/images/save-money.png",
       description:
-        "You get a secure and efficient rental experience that’s as budget-friendly as it is hassle-free. Discover a smarter way to book and start saving today.",
+        "You get a secure and efficient rental experience that's as budget-friendly as it is hassle-free. Discover a smarter way to book and start saving today.",
     },
     {
       title: "Online Booking",
       icon: "/images/online-booking.png",
       description:
-        "Book your next rental easily with Lif3away’s secure online reservation. With a protected payment process, you can reserve properties quickly.",
+        "Book your next rental easily with Lif3away's secure online reservation. With a protected payment process, you can reserve properties quickly.",
     },
     {
       title: "ID Check Advanced",
       icon: "/images/id-check.png",
       description:
-        "Our service verifies landlords and agents, significantly reducing the risk of fraud, Especially beneficial for international tenants or those unfamiliar with the area, ensuring you can trust the people you’re dealing with.",
+        "Our service verifies landlords and agents, significantly reducing the risk of fraud. Especially beneficial for international tenants or those unfamiliar with the area, ensuring you can trust the people you're dealing with.",
     },
     {
       title: "AI Personal Agent",
       icon: "/images/ai-agent.png",
       description:
-        "Let Lif3away’s AI Personal Agent do the heavy lifting for you. Increase your chances of securing the perfect place with tailored recommendations and smart insights.",
+        "Let Lif3away’s AI Personal Agent do the heavy lifting for you. Increase your chances of securing the perfect place with tailored recommendations and smart insights. Your personal rental assistant, always by your side.",
     },
     {
       title: "Live View",
       icon: "/images/live-view.png",
       description:
-        "Whether you're in a different city or country, you can thoroughly assess a property before committing to a lease, saving you time and travel expenses.",
+        "Whether you're in a different city or country, you can thoroughly assess a property before committing to a lease, saving you time and travel expenses while ensuring you get a clear, detailed view of your next home.",
     },
     {
       title: "Veritrust",
       icon: "/images/veritrust.png",
       description:
-        "Veritrust means the landlord or professional has earned at least 10 reviews with 4 stars or higher, ensuring reliability and trustworthiness.",
+        "Veritrust means the landlord or professional has earned at least 10 reviews with 4 stars or higher, ensuring reliability and trustworthiness. Unlike other platforms, Lif3away sets the bar for transparency, so you can feel secure in your rental decisions.",
     },
     {
       title: "Online Contract",
       icon: "/images/online-contract.png",
       description:
-        "Easily share and digitally sign rental agreements, ensuring speed, transparency, and reliability for both parties.",
+        "Easily share and digitally sign rental agreements, ensuring speed, transparency, and reliability for both parties. Perfect for those relocating to another country, it simplifies the process and builds trust every step of the way.",
     },
   ],
   Landlords: [
@@ -57,208 +53,257 @@ const tabData = {
       title: "Save Money",
       icon: "/images/save-money.png",
       description:
-        "Access the most affordable and transparent online booking system. No hidden fees, no complicated pricing.",
+        "You can access the most affordable and transparent online booking system available. No hidden fees, no complicated pricing. Save money, save time, and experience the difference with Lif3away.",
     },
     {
       title: "Online Booking",
       icon: "/images/online-booking.png",
       description:
-        "Lif3away allows landlords to accept reservations effortlessly through a protected payment process.",
+        "Lif3away allows landlords to accept reservations effortlessly through a protected payment process, ensuring quick and reliable transactions. Manage your rentals with confidence and ease, no matter where your tenants are coming from.",
     },
     {
       title: "ID Check Advanced",
       icon: "/images/id-check.png",
       description:
-        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud.",
+        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud. This simple yet powerful process safeguards your property and streamlines tenant screening, making it faster and more reliable than ever before.",
     },
     {
       title: "AI Personal Agent",
       icon: "/images/ai-agent.png",
       description:
-        "Set competitive prices, optimize occupancy, and create polished property descriptions using AI.",
+        "Set competitive prices, optimize occupancy, and automatically create polished property descriptions. Get real-time market insights and task automation to save time and reduce errors, keeping your listings attractive and reducing vacancy periods.",
     },
     {
       title: "Live View",
       icon: "/images/live-view.png",
       description:
-        "Showcase your property efficiently with virtual tours, allowing potential tenants to explore remotely.",
+        "Showcase your property efficiently with virtual tours, allowing potential tenants to explore without multiple in-person visits. Ideal for landlords with multiple listings or properties in different locations, it lets you conduct tours remotely, saving time and reaching more interested renters.",
     },
     {
       title: "Veritrust",
       icon: "/images/veritrust.png",
       description:
-        "This added layer of security helps reduce risks and gives you peace of mind.",
+        "This added layer of security helps reduce risks and gives you peace of mind, knowing your tenants have passed both identity and financial checks. Trust veritrust to make your rental experience safer, more reliable, and hassle-free.",
     },
     {
       title: "Online Contract",
       icon: "/images/online-contract.png",
       description:
-        "Easily create, send, and manage rental contracts online, streamlining the leasing process.",
+        "Landlords can easily create, send, and manage rental contracts online, streamlining the leasing process. Automate paperwork, save time, and reduce errors, all within the platform, making property management more efficient and hassle-free.",
     },
     {
       title: "Sponsored Ads",
       icon: "/images/sponsored-ads.png",
       description:
-        "Increase your property’s visibility and attract more potential tenants with targeted advertisements.",
+        "Accelerate your rental process and increase your property's visibility across continents. Reach a wider audience, improve attractiveness, and attract more potential tenants faster, all while enhancing the global appeal of your listings.",
     },
   ],
-  Agents: [
+  Professionals: [
     {
       title: "Save Money",
       icon: "/images/save-money.png",
       description:
-        "Access the most affordable and transparent online booking system available. No hidden fees, no complicated pricing.",
+        "You can access the most affordable and transparent online booking system available. No hidden fees, no complicated pricing. Save money, save time, and experience the difference with Lif3away.",
     },
     {
       title: "Online Booking",
       icon: "/images/online-booking.png",
       description:
-        "Lif3away allows landlords to accept reservations effortlessly through a protected payment process.",
+        " Lif3away allows landlords to accept reservations effortlessly through a protected payment process, ensuring quick and reliable transactions.",
     },
     {
       title: "ID Check Advanced",
       icon: "/images/id-check.png",
       description:
-        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud.",
+        "Using ID scanning and facial biometric technology, we help landlords confirm the identity of prospective tenants, reducing the risk of fraud. This simple yet powerful process not only safeguards your property but also streamlines tenant screening, making it faster and more reliable than ever before..",
     },
     {
       title: "AI Personal Agent",
       icon: "/images/ai-agent.png",
       description:
-        "Lif3away’s AI instantly generates property descriptions, saving time and ensuring consistency.",
+        "Lif3away’s AI instantly generates property descriptions, saving time and ensuring consistency. With real-time market data, agents can optimize pricing and occupancy, quickly adapting to trends. Stay competitive and attract renters faster, all while boosting efficiency and revenue.",
     },
     {
       title: "Live View",
       icon: "/images/live-view.png",
       description:
-        "Lif3away’s live view feature lets agents showcase properties remotely, attracting more tenants.",
+        "Lif3away’s live view feature lets agents showcase properties to interested tenants without in-person viewing. Ideal for agents with multiple listings or properties in different locations, it offers a time-saving solution for remote showings. Conduct tours effortlessly, attract more tenants, and manage properties more efficiently.",
     },
     {
       title: "Veritrust",
       icon: "/images/veritrust.png",
       description:
-        "This added layer of security helps reduce risks and gives you peace of mind.",
+        "This added layer of security helps reduce risks and gives you peace of mind, knowing your tenants have passed both identity and financial checks. Trust Veritrust to make your rental experience safer, more reliable, and hassle-free.",
     },
     {
       title: "Online Contract",
       icon: "/images/online-contract.png",
       description:
-        "Lif3away enables agents to generate, distribute, and track contracts seamlessly for both tenants and landlords.",
+        "Lif3away enables agents to generate, distribute, and track contracts seamlessly for both tenants and landlords. By centralizing all paperwork within the platform, agents save time, reduce errors, and keep everything organized in one place.",
     },
     {
       title: "Sponsored Ads",
       icon: "/images/sponsored-ads.png",
       description:
-        "Increase your property’s visibility and attract more potential tenants with targeted advertisements.",
+        "Accelerate your rental process and expand your properties’ visibility across continents with Lif3away. Attract a wider audience, increase your property’s appeal, and secure more potential tenants faster. Enhance the global appeal of your listings, making them more attractive to renters from around the world.",
     },
   ],
 };
 
 export default function Home() {
-  const [activeCategory, setActiveCategory] = useState<
-    "Tenants" | "Landlords" | "Agents"
-  >("Tenants");
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeCategory, setActiveCategory] = useState<"Tenants" | "Landlords" | "Professionals">("Tenants");
+  const [paused, setPaused] = useState(false);
+  
+  const cities = [
+    { name: "New York", icon: "/images/ny.png" },
+    { name: "Chicago", icon: "/images/chicago.png" },
+    { name: "Houston", icon: "/images/Houston.png" },
+    { name: "San Francisco", icon: "/images/san-francisco.png" },
+    { name: "Seattle", icon: "/images/seattle.png" },
+    { name: "Austin", icon: "/images/austin.png" },
+    { name: "Phoenix", icon: "/images/phoenix.png" },
+    { name: "Columbus", icon: "/images/columbus.png" },
+    { name: "Indianapolis", icon: "/images/indianapolis.png" },
+    { name: "Los Angeles", icon: "/images/la.png" },
+  ];
+  const [currentCityIndex, setCurrentCityIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCityIndex((prev) => (prev + 1) % cities.length);
+    }, 2000); // Change every 2 seconds
+  
+    return () => clearInterval(interval);
+  }, []);
+  
+  
+  
+
 
   return (
     <div className="min-h-screen">
       <Navbar />
-
-      {/* Hero Section */}
-      <section className="h-screen flex flex-col">
-        {/* Background Image */}
-        <div className="relative h-screen">
+      
+      {/* Main content wrapper - exactly screen height */}
+      <div className="h-screen flex flex-col">
+        {/* Hero Section - 60% of viewport height */}
+        <div className="relative h-[60vh] overflow-hidden">
           <img
-            src="/images/landing-page.JPG"
+            src="/images/landing-page.jpg"
             alt="Modern architecture"
-            className="absolute inset-0 w-full h-full object-cover "
-            style={{
-              objectPosition: "110% 38%",
-            }}
+            className="absolute inset-0 w-full h-full object-cover " 
+            style={{ objectPosition: "50% 37%",}}
           />
-          <div className="absolute inset-0 flex items-center justify-start pl-[5%]">
-            <h1 className="text-3xl font-light text-[#FEF7FF] absolute top-1/4 left-1/4 right-2/4 transform -translate-x-2/4 mt-12 ">
+          <div className="absolute inset-0 flex items-start pt-[15vh] px-6 sm:px-12 lg:px-24">
+            <h1 className="text-2xl sm:text-3xl lg:text-3xl ml-14 mt-8 font-light text-[#FEF7FF]">
               Simplify your move
             </h1>
           </div>
         </div>
 
-        {/* Bottom Content */}
-        <div className="min-h-[50vh] grid grid-cols-2">
-          {/* Left Content */}
-          <div className="bg-[#1D1B20] p-12 flex flex-col items-center justify-center">
-         <div className="space-y-6 text-center">
-          <h2 className="text-3xl font-light text-[#FEF7FF]">
-          Discover the future of rental solutions
-          </h2>
-          <p className="text-lg text-[#FEF7FF]">
-          Join our exclusive community and be the first to experience a smarter, automated rental platform. Connecting you with vetted properties, trusted landlords, and seamless experiences.
-          </p>
-          <button className="px-8 py-3 bg-[#1D1B20] text-[#FEF7FF] border border-[#FEF7FF] rounded-full hover:bg-[#1D1B20] transition">
-             Join the waiting list
-          </button>
-          </div>
-          </div>
+        {/* Bottom Section - 35% of viewport height */}
+        <div className="relative h-[40vh] bg-[#1D1B20]">
+          <div className="absolute inset-0 container mx-auto px-6 sm:px-12 lg:px-24 py-8 sm:py-10">
+            <div className="h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+              {/* Left Content */}
+              <div className="flex flex-col justify-center text-center lg:text-center">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-light text-[#FEF7FF] mb-7 sm:mb-4 lg:mb-8">
+                  Discover the future of rental solutions
+                </h2>
+                <p className="text-sm sm:text-base text-[#FEF7FF] mb-4 sm:mb-6 max-w-[80ch] mx-auto lg:mx-0">
+                  Join our exclusive community and be the first to experience a smarter, automated rental platform. 
+                  Connecting you with vetted properties, trusted landlords, and seamless experiences.
+                </p>
+                <div className="flex justify-center lg:justify-center">
+                  <button className="px-6 py-2.5 text-sm sm:text-base border border-[#FEF7FF] text-[#FEF7FF] rounded-full hover:bg-white/10 transition-colors duration-300">
+                    Join the waiting list
+                  </button>
+                </div>
+              </div>
 
-          {/* Right Image */}
-          <div className="relative flex justify-center items-center bg-[#1D1B20] p-6">
-            <div className="w-[400px] h-[280px] md:w-[450px] md:h-[320px] overflow-hidden rounded-2xl shadow-lg">
-              <img
-                src="/images/landing-Page2.jpeg"
-                alt="Modern interior"
-                className="w-full h-full object-cover transform scale-95 rounded-2xl"
-              />
+              {/* Right Image */}
+              <div className="hidden lg:flex items-center justify-end">
+                <div className="w-[40%] h-[40%] lg:w-[48%] lg:h-[100%]  aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src="/images/landing-Page2.jpeg"
+                    alt="Modern interior"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Innovative Features */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="grid grid-cols-2 gap-16 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <img
-                src="/images/3D-room.jpg"
-                alt="Modern interior"
-                className="w-full h-full object-cover shadow-2xl"
-              />
-            </div>
-            <div className="space-y-8 text-blackn text-center">
-              <h2 className="text-5xl font-light">
-                Innovative features, unlimited power.
-              </h2>
-              <p className="text-black-400 text-lg-[#1D1B20]">
-                We know how stressful it can be to find a new home to rent and
-                move, especially to a new city. Our goal is to break down all
-                the barriers and risks, at the lowest possible cost, so you can
-                focus only on what matters. That's why we invest in innovation,
-                with the help of technology and AI we can offer
-                never-before-seen features.
-              </p>
+    {/* Innovative Features Section */}
+    <section className="bg-white py-16 sm:py-24">
+      <div className="container mx-auto px-8 sm:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/*  Left - 3D Room Image */}
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/3D-room.jpg"
+              alt="Modern interior"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/*  Right - Content + Animated City */}
+          <div className="space-y-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-[100ch] font-thick text-[#1D1B20]">
+              Innovative features, unlimited power.
+            </h2>
+            <p className="text-[1.05rem] leading-[1.75rem] text-[#1D1B20] text-center max-w-[90ch] mx-auto">
+              We know how stressful it can be to find a new home to rent and move,
+              especially to a new city. Our goal is to break down all the barriers
+              and risks, at the lowest possible cost, so you can focus only on what
+              matters. That's why we invest in innovation, with the help of
+              technology and AI we can offer never-before-seen features.
+            </p>
+
+            {/*  Cyber Flare Animated City Display */}
+            <div className="city-flare-container">
+              <div key={cities[currentCityIndex].name} className="city-flare-inner">
+                <img
+                  src={cities[currentCityIndex].icon}
+                  alt={cities[currentCityIndex].name}
+                  className="city-flare-icon"
+                />
+
+                {/*  Glowing City Name + Particle Trail */}
+                <div className="city-particles-wrapper">
+                  <span className="city-flare-name">
+                    {cities[currentCityIndex].name}
+                  </span>
+                  <div className="city-particles" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* Services Section */}
-      <section className="bg-gray-50 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Main Tabs */}
-          <div className="flex justify-center space-x-4 mb-12">
-            {["Tenants", "Landlords", "Agents"].map((category) => (
+
+
+
+
+
+
+        {/* Services Section */}
+        <section className="bg-[#f8f8f8] py-16 sm:py-24 overflow-hidden">
+        <div className="container mx-auto px-8 sm:px-12 lg:px-16">
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {["Tenants", "Landlords", "Professionals"].map((category) => (
               <button
                 key={category}
-                onClick={() => {
-                  setActiveCategory(
-                    category as "Tenants" | "Landlords" | "Agents"
-                  );
-                  setActiveTab(0); // Reset to first card when changing category
-                }}
-                className={`px-6 py-2 rounded-full transition ${
+                onClick={() => setActiveCategory(category as any)}
+                className={`px-6 py-2 text-base rounded-full transition-colors duration-300 ${
                   activeCategory === category
-                    ? "bg-gray-700 text-white"
-                    : "bg-gray-100 text-gray-900 hover:bg-gray-200"
+                    ? "bg-gray-900 text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
               >
                 {category}
@@ -266,51 +311,31 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Sub-Tabs & Content */}
-          <div className="grid grid-cols-3 gap-8 transition-all duration-500 ease-in-out">
-            {tabData[activeCategory]
-              .slice(activeTab * 3, activeTab * 3 + 3) // Show 3 cards per navigation click
-              .map((tab, index) => (
+          {/* Infinite Scroll Container */}
+          <div
+            className="relative overflow-hidden"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            <div
+              className={`scroll-wrapper ${paused ? "scroll-paused" : ""}`}
+              style={{ width: "fit-content" }}
+            >
+              {[...tabData[activeCategory], ...tabData[activeCategory]].map((tab, index) => (
                 <div
                   key={index}
-                  className={`cursor-pointer bg-white p-8 rounded-xl shadow-sm transition-transform transform hover:scale-105 transition-all duration-500 ease-in-out ${
-                    activeTab === index
-                      ? "hover:ring-1 hover:ring-gray-300" // "ring-2 ring-emerald-500"
-                      : "hover:ring-1 hover:ring-gray-300"
-                  }`}
+                  className="w-[300px] min-w-[300px] p-6 rounded-xl card-glow shadow-lg text-center"
                 >
-                  <div className="w-12 h-12 bg-white-100 rounded-full flex items-center justify-center mb-6 ">
-                   <img src={tab.icon} alt={tab.title} className="w-full h-full object-contain" />
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                      <img src={tab.icon} alt={tab.title} className="w-10 h-10 object-contain" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{tab.title}</h3>
-                  <p className="text-gray-600">{tab.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-black">{tab.title}</h3>
+                  <p className="text-sm text-black leading-relaxed">{tab.description}</p>
                 </div>
               ))}
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="ml-auto flex justify-center space-x-4 mt-8">
-            <button
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100"
-              onClick={() => {
-                setActiveTab((prev) => (prev > 0 ? prev - 1 : prev)); // Navigate to previous set of 3 cards
-              }}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100"
-              onClick={() => {
-                setActiveTab(
-                  (prev) =>
-                    prev < Math.floor(tabData[activeCategory].length / 3)
-                      ? prev + 1
-                      : prev // Navigate to next set of 3 cards
-                );
-              }}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            </div>
           </div>
         </div>
       </section>
