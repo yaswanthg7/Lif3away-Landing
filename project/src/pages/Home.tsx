@@ -188,7 +188,7 @@ export default function Home() {
         {/* Hero Section - 60% of viewport height */}
         <div className="relative h-[60vh] overflow-hidden">
           <img
-            src="/images/landing-page.jpg"
+            src="/images/landing-page.JPG"
             alt="Modern architecture"
             className="absolute inset-0 w-full h-full object-cover " 
             style={{ objectPosition: "50% 37%",}}
