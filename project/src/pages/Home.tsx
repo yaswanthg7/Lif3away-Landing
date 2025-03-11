@@ -151,9 +151,12 @@ const tabData = {
 };
 
 export default function Home() {
+  // 1) Add this state for controlling the modal
+  const [showWaitlistForm, setShowWaitlistForm] = useState(false);
+
   const [activeCategory, setActiveCategory] = useState<"Tenants" | "Landlords" | "Professionals">("Tenants");
   const [paused, setPaused] = useState(false);
-  
+
   const cities = [
     { name: "New York", icon: "/images/ny.png" },
     { name: "Chicago", icon: "/images/chicago.png" },
@@ -166,23 +169,20 @@ export default function Home() {
     { name: "Indianapolis", icon: "/images/indianapolis.png" },
     { name: "Los Angeles", icon: "/images/la.png" },
   ];
+  
   const [currentCityIndex, setCurrentCityIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentCityIndex((prev) => (prev + 1) % cities.length);
-    }, 2000); // Change every 2 seconds
-  
+    }, 2000);
     return () => clearInterval(interval);
-  }, []);
-  
-  
-  
-
+  }, [cities.length]);
 
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       {/* Main content wrapper - exactly screen height */}
       <div className="h-screen flex flex-col">
         {/* Hero Section - 60% of viewport height */}
@@ -190,8 +190,8 @@ export default function Home() {
           <img
             src="/images/landing-page.JPG"
             alt="Modern architecture"
-            className="absolute inset-0 w-full h-full object-cover " 
-            style={{ objectPosition: "50% 37%",}}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "50% 37%" }}
           />
           <div className="absolute inset-0 flex items-start pt-[15vh] px-6 sm:px-12 lg:px-24">
             <h1 className="text-2xl sm:text-3xl lg:text-3xl ml-14 mt-8 font-light text-[#FEF7FF]">
@@ -200,7 +200,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom Section - 35% of viewport height */}
+        {/* Bottom Section - 40% of viewport height */}
         <div className="relative h-[40vh] bg-[#1D1B20]">
           <div className="absolute inset-0 container mx-auto px-6 sm:px-12 lg:px-24 py-8 sm:py-10">
             <div className="h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
@@ -214,7 +214,11 @@ export default function Home() {
                   Connecting you with vetted properties, trusted landlords, and seamless experiences.
                 </p>
                 <div className="flex justify-center lg:justify-center">
-                  <button className="px-6 py-2.5 text-sm sm:text-base border border-[#FEF7FF] text-[#FEF7FF] rounded-full hover:bg-white/10 transition-colors duration-300">
+                  {/* 2) Show the modal on click */}
+                  <button
+                    onClick={() => setShowWaitlistForm(true)}
+                    className="px-6 py-2.5 text-sm sm:text-base border border-[#FEF7FF] text-[#FEF7FF] rounded-full hover:bg-white/10 transition-colors duration-300"
+                  >
                     Join the waiting list
                   </button>
                 </div>
@@ -222,7 +226,7 @@ export default function Home() {
 
               {/* Right Image */}
               <div className="hidden lg:flex items-center justify-end">
-                <div className="w-[40%] h-[40%] lg:w-[48%] lg:h-[100%]  aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <div className="w-[40%] h-[40%] lg:w-[48%] lg:h-[100%] aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src="/images/landing-Page2.jpeg"
                     alt="Modern interior"
@@ -233,66 +237,51 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 
-    {/* Innovative Features Section */}
-    <section className="bg-white py-16 sm:py-24">
-      <div className="container mx-auto px-8 sm:px-12 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/*  Left - 3D Room Image */}
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="/images/3D-room.jpg"
-              alt="Modern interior"
-              className="w-full h-full object-cover"
-            />
-          </div>
+      {/* Innovative Features Section */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="container mx-auto px-8 sm:px-12 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - 3D Room Image */}
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/3D-room.jpg"
+                alt="Modern interior"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/*  Right - Content + Animated City */}
-          <div className="space-y-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-[100ch] font-thick text-[#1D1B20]">
-              Innovative features, unlimited power.
-            </h2>
-            <p className="text-[1.05rem] leading-[1.75rem] text-[#1D1B20] text-center max-w-[90ch] mx-auto">
-              We know how stressful it can be to find a new home to rent and move,
-              especially to a new city. Our goal is to break down all the barriers
-              and risks, at the lowest possible cost, so you can focus only on what
-              matters. That's why we invest in innovation, with the help of
-              technology and AI we can offer never-before-seen features.
-            </p>
+            {/* Right - Content + Animated City */}
+            <div className="space-y-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-[100ch] font-thick text-[#1D1B20]">
+                Innovative features, unlimited power.
+              </h2>
+              <p className="text-[1.05rem] leading-[1.75rem] text-[#1D1B20] text-center max-w-[90ch] mx-auto">
+                We know how stressful it can be to find a new home to rent and move...
+              </p>
 
-            {/*  Cyber Flare Animated City Display */}
-            <div className="city-flare-container">
-              <div key={cities[currentCityIndex].name} className="city-flare-inner">
-                <img
-                  src={cities[currentCityIndex].icon}
-                  alt={cities[currentCityIndex].name}
-                  className="city-flare-icon"
-                />
-
-                {/*  Glowing City Name + Particle Trail */}
-                <div className="city-particles-wrapper">
-                  <span className="city-flare-name">
-                    {cities[currentCityIndex].name}
-                  </span>
-                  <div className="city-particles" />
+              {/* Animated City Display */}
+              <div className="city-flare-container">
+                <div key={cities[currentCityIndex].name} className="city-flare-inner">
+                  <img
+                    src={cities[currentCityIndex].icon}
+                    alt={cities[currentCityIndex].name}
+                    className="city-flare-icon"
+                  />
+                  <div className="city-particles-wrapper">
+                    <span className="city-flare-name">{cities[currentCityIndex].name}</span>
+                    <div className="city-particles" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-
-
-
-
-
-
-        {/* Services Section */}
-        <section className="bg-[#f8f8f8] py-16 sm:py-24 overflow-hidden">
+      {/* Services Section */}
+      <section className="bg-[#f8f8f8] py-16 sm:py-24 overflow-hidden">
         <div className="container mx-auto px-8 sm:px-12 lg:px-16">
           {/* Category Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -339,6 +328,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 3) Conditionally render the Zoho Form modal */}
+      {showWaitlistForm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+          onClick={() => setShowWaitlistForm(false)} // Close if user clicks outside
+        >
+          {/* Stop click from closing if user clicks inside the white box */}
+          <div
+            className="relative bg-white p-4 md:p-6 rounded-md shadow-lg max-w-2xl w-[90%]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowWaitlistForm(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-xl font-semibold mb-4">Join the waiting list</h2>
+            {/* 4) Your Zoho iframe goes here */}
+            <iframe
+              aria-label="Join the waiting list"
+              frameBorder="0"
+              style={{ height: "500px", width: "100%", border: "none" }}
+              src="https://forms.zohopublic.com/lif3away1/form/joinus/formperma/BJ4LPmWeK-rDkzmojXOyqGrAnUZ5xD0IQXReYrMOUfQ"
+            ></iframe>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
