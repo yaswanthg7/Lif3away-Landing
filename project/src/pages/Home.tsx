@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import "../index.css"
-import { useEffect } from "react";
+
 const tabData = {
   Tenants: [
     {
@@ -151,12 +151,14 @@ const tabData = {
 };
 
 export default function Home() {
-  // 1) Add this state for controlling the modal
+  // state for controlling the modal
   const [showWaitlistForm, setShowWaitlistForm] = useState(false);
+
+
 
   const [activeCategory, setActiveCategory] = useState<"Tenants" | "Landlords" | "Professionals">("Tenants");
   const [paused, setPaused] = useState(false);
-
+{/*
   const cities = [
     { name: "New York", icon: "/images/ny.png" },
     { name: "Chicago", icon: "/images/chicago.png" },
@@ -168,9 +170,9 @@ export default function Home() {
     { name: "Columbus", icon: "/images/columbus.png" },
     { name: "Indianapolis", icon: "/images/indianapolis.png" },
     { name: "Los Angeles", icon: "/images/la.png" },
-  ];
+  ]; */}
   
-  const [currentCityIndex, setCurrentCityIndex] = useState(0);
+  {/*const [currentCityIndex, setCurrentCityIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -178,11 +180,12 @@ export default function Home() {
     }, 2000);
     return () => clearInterval(interval);
   }, [cities.length]);
-
+  */}
+ 
   return (
     <div className="min-h-screen">
       <Navbar />
-
+  
       {/* Main content wrapper - exactly screen height */}
       <div className="h-screen flex flex-col">
         {/* Hero Section - 60% of viewport height */}
@@ -199,7 +202,7 @@ export default function Home() {
             </h1>
           </div>
         </div>
-
+  
         {/* Bottom Section - 40% of viewport height */}
         <div className="relative h-[40vh] bg-[#1D1B20]">
           <div className="absolute inset-0 container mx-auto px-6 sm:px-12 lg:px-24 py-8 sm:py-10">
@@ -210,11 +213,10 @@ export default function Home() {
                   Discover the future of rental solutions
                 </h2>
                 <p className="text-sm sm:text-base text-[#FEF7FF] mb-4 sm:mb-6 max-w-[80ch] mx-auto lg:mx-0">
-                  Join our exclusive community and be the first to experience a smarter, automated rental platform. 
+                  Join our exclusive community and be the first to experience a smarter, automated rental platform.
                   Connecting you with vetted properties, trusted landlords, and seamless experiences.
                 </p>
                 <div className="flex justify-center lg:justify-center">
-                  {/* 2) Show the modal on click */}
                   <button
                     onClick={() => setShowWaitlistForm(true)}
                     className="px-6 py-2.5 text-sm sm:text-base border border-[#FEF7FF] text-[#FEF7FF] rounded-full hover:bg-white/10 transition-colors duration-300"
@@ -223,24 +225,24 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-
+  
               {/* Right Image */}
               <div className="hidden lg:flex items-center justify-end">
-                <div className="w-[40%] h-[40%] lg:w-[48%] lg:h-[100%] aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative w-full max-w-[390px] max-h-[390px] h-full overflow-hidden rounded-xl shadow-xl">
                   <img
                     src="/images/landing-Page2.jpeg"
                     alt="Modern interior"
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
                   />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div> 
-
-      {/* Innovative Features Section */}
-      <section className="bg-white py-16 sm:py-24">
+      </div>
+  
+     {/* Innovative Features Section */}
+     <section className="bg-white py-16 sm:py-24">
         <div className="container mx-auto px-8 sm:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - 3D Room Image */}
@@ -254,14 +256,16 @@ export default function Home() {
 
             {/* Right - Content + Animated City */}
             <div className="space-y-8">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-[100ch] font-thick text-[#1D1B20]">
+              <h2 className="text-3xl sm:text-4xl lg:text-4xl text-center max-w-[100ch] font-thick text-[#1D1B20]">
                 Innovative features, unlimited power.
               </h2>
               <p className="text-[1.05rem] leading-[1.75rem] text-[#1D1B20] text-center max-w-[90ch] mx-auto">
-                We know how stressful it can be to find a new home to rent and move...
+              We know how stressful it can be to find a new home to rent and move, especially to a new city. 
+              Our goal is to break down all the barriers and risks, at the lowest possible cost, so you can focus only on what matters.
+              That's why we invest in innovation, with the help of technology and AI we can offer never-before-seen features.'
               </p>
 
-              {/* Animated City Display */}
+              {/* Animated City Display 
               <div className="city-flare-container">
                 <div key={cities[currentCityIndex].name} className="city-flare-inner">
                   <img
@@ -275,6 +279,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              */}
             </div>
           </div>
         </div>
@@ -329,13 +334,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3) Conditionally render the Zoho Form modal */}
+      {/* Conditionally render the Zoho Form modal */}
       {showWaitlistForm && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
           onClick={() => setShowWaitlistForm(false)} // Close if user clicks outside
         >
-          {/* Stop click from closing if user clicks inside the white box */}
+          {/* Modal content */}
           <div
             className="relative bg-white p-4 md:p-6 rounded-md shadow-lg max-w-2xl w-[90%]"
             onClick={(e) => e.stopPropagation()}
@@ -348,8 +353,8 @@ export default function Home() {
               ✕
             </button>
 
-            <h2 className="text-xl font-semibold mb-4">Join the waiting list</h2>
-            {/* 4) Your Zoho iframe goes here */}
+            <h2 className="text-xl font-semibold mb-4"></h2>
+           
             <iframe
               aria-label="Join the waiting list"
               frameBorder="0"
@@ -360,7 +365,7 @@ export default function Home() {
         </div>
       )}
 
-      <Footer />
+      
     </div>
   );
 }

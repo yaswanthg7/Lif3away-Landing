@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -48,8 +47,8 @@ export default function About() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="text-2xl font-400 text-[#FEF7FF] text-center px-4 mr-100 ml-50 mb-60 mt-90"
-              style={{ marginTop: "10rem" }}
+              className="text-2xl font-400 text-[#FEF7FF] text-center px-4 ml-10 mr-90 mb-40"
+              style={{ marginTop: "1rem" }}
             >
               Be part of the change you are looking for
             </motion.h1>
@@ -78,7 +77,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 }

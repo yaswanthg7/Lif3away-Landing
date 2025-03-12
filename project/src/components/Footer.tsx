@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Top Section: Address (Left) and Social Media Icons (Right) */}
         <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start text-center sm:text-left mb-6">
           
-          {/* Address - Left */}
+          {/* Address */}
           <div className="text-white space-y-1">
             <p className="font-semibold">Lif3away, Inc.</p>
             <p className="text-sm">P: 800-800-1800</p>
@@ -16,7 +16,7 @@ export default function Footer() {
             <p className="text-sm">Los Angeles, CA 90013</p>
           </div>
 
-          {/* Social Media Icons - Right */}
+          {/* Social Icons */}
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a href="https://twitter.com/Lif3away" target="_blank" className="text-white hover:text-gray-400 text-lg sm:text-xl">
               <FaXTwitter />
@@ -34,10 +34,9 @@ export default function Footer() {
               <FaFacebook />
             </a>
           </div>
-
         </div>
 
-        {/* Bottom Section: Centered Text Links */}
+        {/* Bottom Links */}
         <div className="flex flex-wrap justify-center items-center text-sm text-white space-x-3 text-center">
           <p>© 2025 Lif3away Inc. All Rights Reserved.</p>
           <span className="hidden sm:inline">|</span>
@@ -45,13 +44,20 @@ export default function Footer() {
           <span className="hidden sm:inline">|</span>
           <a href="https://www.linkedin.com/company/lif3away-com/jobs/" target="_blank" className="hover:text-gray-400">Careers</a>
           <span className="hidden sm:inline">|</span>
-          <a href="/support" className="hover:text-gray-400">Support</a>
+          <a href="mailto:Support@lif3away.com" target="_blank" className="hover:text-gray-400">Support</a>
           <span className="hidden sm:inline">|</span>
-          <a href="/privacy" className="hover:text-gray-400">Privacy</a>
-          <span className="hidden sm:inline">|</span>
-          <a href="/terms" className="hover:text-gray-400">T&C</a>
-        </div>
 
+          {/* Privacy Policy Link */}
+          <span
+            className="hover:text-gray-400 cursor-pointer"
+            onClick={() => window.dispatchEvent(new CustomEvent("openPrivacy"))}
+          >
+            Privacy
+          </span>
+
+          <span className="hidden sm:inline">|</span>
+          <a href="\" className="hover:text-gray-400">T&C</a>
+        </div>
       </div>
     </footer>
   );

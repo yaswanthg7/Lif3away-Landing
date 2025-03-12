@@ -28,9 +28,29 @@
 
 @media (max-width: 768px) {
   .scroll-wrapper {
-    animation-duration: 15s;
+    animation-duration: 40s;
   }
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
+
 
 /* ------------------------------
    Glowing Service Cards
@@ -40,14 +60,14 @@
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 247, 255, 0.15);
+  
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: white;
 }
 
 .card-glow:hover {
   transform: scale(1.04);
-  box-shadow: 0 0 30px rgba(0, 247, 255, 0.4);
+  box-shadow: 0 0 30px rgba(251, 255, 255, 0.4);
 }
 
 /* ------------------------------

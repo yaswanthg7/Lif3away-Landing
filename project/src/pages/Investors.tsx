@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const content = [
@@ -87,7 +87,7 @@ export default function Map() {
         </AnimatePresence>
 
         {/* Image Section */}
-{/* Image Displayed Next to Content (Fully Synced Transition) */}
+{/* Image Displayed Next to Content  */}
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -95,9 +95,10 @@ export default function Map() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 1 }} 
-          className="ml-auto flex justify-center items-center 
-                    h-60 w-40 mr-20 
-                    sm:mr-0 sm:h-42 sm:w-42 sm:mt-6"  //  Adjusted for Mobile View
+          className="flex justify-center items-center 
+           h-60 w-40 mx-auto mt-8 
+           md:ml-auto md:mr-20 md:mt-0" //  Adjusted for Mobile View
+  
         >
           <img
             src={content[index].image} 
@@ -112,7 +113,7 @@ export default function Map() {
 
       </div>
 
-      <Footer />
+    
     </div>
   );
 }
