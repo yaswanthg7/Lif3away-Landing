@@ -10,11 +10,19 @@ import Footer from './components/Footer';
 
 function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
     const handlePrivacyOpen = () => setShowPrivacy(true);
+    const handleTermsOpen = () => setShowTerms(true);
+    
     window.addEventListener("openPrivacy", handlePrivacyOpen);
-    return () => window.removeEventListener("openPrivacy", handlePrivacyOpen);
+    window.addEventListener("openTerms", handleTermsOpen);
+
+    return () => {
+      window.removeEventListener("openPrivacy", handlePrivacyOpen);
+      window.removeEventListener("openTerms", handleTermsOpen);
+    };
   }, []);
 
   return (
@@ -31,6 +39,7 @@ function App() {
 
       <Footer />
 
+      {/* Privacy Modal */}
       {showPrivacy && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
@@ -46,10 +55,34 @@ function App() {
             >
               ✕
             </button>
-
             <iframe
               src="/lif3away-privacy-policy.html"
               title="Privacy Policy"
+              className="w-full h-full border-none"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Terms & Conditions Modal */}
+      {showTerms && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+          onClick={() => setShowTerms(false)}
+        >
+          <div
+            className="relative bg-white p-4 md:p-6 rounded-md shadow-lg max-w-3xl w-[90%] h-[80vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowTerms(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-black"
+            >
+              ✕
+            </button>
+            <iframe
+              src="/lif3away-website-t-cs.html"
+              title="Terms & Conditions"
               className="w-full h-full border-none"
             />
           </div>

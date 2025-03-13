@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Address */}
           <div className="text-white space-y-1">
             <p className="font-semibold">Lif3away, Inc.</p>
-            <p className="text-sm">P: 800-800-1800</p>
+            <p className="text-sm">P: +1 213-799-3799</p>
             <p className="text-sm">408 S Spring St., Ste. 603</p>
             <p className="text-sm">Los Angeles, CA 90013</p>
           </div>
@@ -56,7 +56,13 @@ export default function Footer() {
           </span>
 
           <span className="hidden sm:inline">|</span>
-          <a href="\" className="hover:text-gray-400">T&C</a>
+        <span
+          className="hover:text-gray-400 cursor-pointer"
+          onClick={() => window.dispatchEvent(new CustomEvent("openTerms"))}
+        >
+          T&C
+        </span>
+
         </div>
       </div>
     </footer>
