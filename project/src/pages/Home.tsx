@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navbar from "../components/Navbar";
+
 
 import "../index.css"
 
@@ -154,6 +155,7 @@ const tabData = {
 export default function Home() {
   // state for controlling the modal
   const [showWaitlistForm, setShowWaitlistForm] = useState(false);
+  const [objectPos, setObjectPos] = useState("50% 37%");
 
 
 
@@ -182,6 +184,15 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [cities.length]);
   */}
+  useEffect(() => {
+    const handleResize = () => {
+      setObjectPos(window.innerWidth < 768 ? "37% 50%" : "50% 37%");
+    };
+
+    handleResize(); // call initially
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
  
   return (
     <div className="min-h-screen">
@@ -194,11 +205,11 @@ export default function Home() {
           <img
             src="/images/landing-page.JPG"
             alt="Modern architecture"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "50% 37%" }}
+            className="absolute inset-0 w-full h-full object-cover "
+            style={{ objectPosition: objectPos }}
           />
           <div className="absolute inset-0 flex items-start pt-[15vh] px-6 sm:px-12 lg:px-24">
-            <h1 className="text-2xl sm:text-3xl lg:text-3xl ml-14 mt-8 font-light text-[#FEF7FF]">
+            <h1 className="text-2xl sm:text-3xl lg:text-3xl ml-20 mt-8 font-light text-[#FEF7FF]">
               Simplify your move
             </h1>
           </div>

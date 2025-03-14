@@ -49,6 +49,39 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none; 
 }
+/*click to call me*/
+
+#vonageClick2callme a {
+  display: inline-block;
+  background-color: transparent;
+  color: #FEF7FF;
+  font-family: inherit;
+  font-size: 0.875rem; /* text-sm */
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #FEF7FF;
+  border-radius: 9999px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  line-height: 1;
+  text-decoration: none;
+}
+
+/* Hover */
+#vonageClick2callme a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Hide the icon image only */
+#vonageClick2callme img {
+  display: none;
+}
+
+  
+
+
+
+
 
 
 

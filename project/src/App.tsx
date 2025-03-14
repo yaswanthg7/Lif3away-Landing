@@ -25,6 +25,20 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data === "openPrivacy") {
+        setShowTerms(false); // Close T&C if open
+        setTimeout(() => setShowPrivacy(true), 50); // Open Privacy after short delay
+      }
+    };
+  
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+  
+  
+
   return (
     <>
       <Navbar />

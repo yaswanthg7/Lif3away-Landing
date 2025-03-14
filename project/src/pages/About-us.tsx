@@ -59,13 +59,14 @@ export default function About() {
           {/* Bottom Half - Auto-Transitioning Content */}
           <div className="h-auto min-h-[40vh] bg-[#1D1B20] text-[#FEF7FF] flex items-center">
             <div className="max-w-4xl mx-auto px-6 text-center sm:text-left">
-              <motion.div
-                key={currentSection} // Key ensures re-animation on change
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
-              >
+            <motion.div
+              key={sections[currentSection].title} 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            >
+
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light mb-4 sm:mb-6">
                   {sections[currentSection].title}
                 </h2>
